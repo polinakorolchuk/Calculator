@@ -14,8 +14,8 @@ body {
   border-radius: 15px;
   background: #505050;
   box-shadow:
-    0 10px 0 50px rgba(143, 143, 143, 0.03),
-    0px 12px 20px 12px rgba(122, 122, 122, 0.5);
+    0 10px 0 50px #f0f0f0,
+    0px 12px 20px 12px #7a7a7a;
   color: #fff;
   overflow: hidden;
   display: flex;
@@ -147,22 +147,21 @@ body {
 }
 
 .calculator.light {
-  background-color: #f0f0f0;
+  background-color: #e6e6e6;
   color: #333;
 }
 
 .calculator.light .display {
-  background-color: #fff;
+  background-color: #ffffff; 
   color: #333;
 }
-
 .calculator.light .button.darkGrey {
   background-color: #d1d1d1; 
   color: #333;
 }
 
 .calculator.light .button.grey {
-  background-color: #e4e4e4; 
+  background-color: #e0e0e0; 
   color: #333;
 }
 
@@ -205,5 +204,5 @@ body {
 }
 
 .round.selected {
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 0 3px #ffffffb3;
 }
