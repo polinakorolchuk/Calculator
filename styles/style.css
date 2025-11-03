@@ -9,9 +9,9 @@ body {
 }
 
 .calculator {
-  width: 280px;
-  height: 419px;
-  border-radius: 18px;
+  width: 278px;
+  height: 418px;
+  border-radius: 15px;
   background: #505050;
   box-shadow:
     0 10px 0 50px rgba(143, 143, 143, 0.03),
