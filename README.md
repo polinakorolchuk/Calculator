@@ -1,6 +1,6 @@
 # Simple Calculator
 
-## '' Task
+## Task
 
 [Link to task description](https://docs.google.com/document/d/1zpXXeSae-BlcxPKgw3DhxZA92cspVailrPYoaXSYrW8/edit?tab=t.0)
 
@@ -12,7 +12,7 @@ You must configure **Webpack** so that the optimized production build outputs on
 - `index.html`  
 - a single bundled JS file (e.g., `bundle.js`)
 
-### '' Requirements
+###  Requirements
 
 -  No use of `eval`, `Math`, `jQuery`, or any third-party math libraries (like Math.js)  
 -  Code must be split into separate modules  
@@ -20,7 +20,7 @@ You must configure **Webpack** so that the optimized production build outputs on
 -  Add a pre-commit hook (Husky) to prevent commits if ESLint errors exist  
 -  Include documentation in this `README.md`
 
-### '' Bonus points for
+###  Bonus points for
 
 -  User-friendly UI 
 -  Theme switcher  
@@ -28,7 +28,7 @@ You must configure **Webpack** so that the optimized production build outputs on
 
 ---
 
-## '' Technologies used  
+##  Technologies used  
 
 - Webpack  
 - JavaScript  
@@ -37,7 +37,7 @@ You must configure **Webpack** so that the optimized production build outputs on
 
 ---
 
-## '' How to run the app 
+##  How to run the app 
 
 1. Clone this repository 
 
@@ -63,8 +63,9 @@ npm run start
 npm run build
 ```
 
-##  '' The app structure 
+##   The app structure 
 
+```
 project/
 ├─ src/
 │  ├─ index.html            # HTML template 
@@ -76,3 +77,4 @@ project/
 │     ├─ calculator.js      # Core math logic
 │     ├─ ui.js              # UI event listeners and screen updates
 │     └─ theme.js           # Theme switch logic
+```
