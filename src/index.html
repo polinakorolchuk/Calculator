@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator</title>
+</head>
+<body>
+  <div class="calculator">
+    <div class="theme">
+      <div class="round dark" data-theme="dark" title="Dark theme"></div>
+      <div class="round light" data-theme="light" title="Light theme"></div>
+      <div class="round greenTheme" data-theme="greenTheme" title="Green theme"></div>
+    </div>
+
+    <input type="text" class="display" id="screen" value="0" disabled />
+
+    <div class="buttons">
+      <div class="button grey" data-action="clear">AC</div>
+      <div class="button grey" data-action="+/-">+/-</div>
+      <div class="button grey" data-action="%">%</div>
+      <div class="button orange" data-action="/">÷</div>
+
+      <div class="button darkGrey" data-action="7">7</div>
+      <div class="button darkGrey" data-action="8">8</div>
+      <div class="button darkGrey" data-action="9">9</div>
+      <div class="button orange" data-action="*">×</div>
+
+      <div class="button darkGrey" data-action="4">4</div>
+      <div class="button darkGrey" data-action="5">5</div>
+      <div class="button darkGrey" data-action="6">6</div>
+      <div class="button orange" data-action="-">−</div>
+
+      <div class="button darkGrey" data-action="1">1</div>
+      <div class="button darkGrey" data-action="2">2</div>
+      <div class="button darkGrey" data-action="3">3</div>
+      <div class="button orange" data-action="+">+</div>
+
+      <div class="button darkGrey zero" data-action="0">0</div>
+      <div class="button darkGrey" data-action=",">,</div>
+      <div class="button orange" data-action="=">=</div>
+    </div>
+  </div>
+
+  <script type="module" src="./js/index.js"></script>
+</body>
+</html>
+
