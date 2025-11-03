@@ -22,12 +22,12 @@ body {
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
-  min-width: 220px;
+  min-width: 240px;
 }
 
 .calculator-buttons {
   display: grid;
-  grid-template-columns: repeat(4, 55px);
+  grid-template-columns: repeat(4, 60px); 
   grid-gap: 10px;
 }
 
@@ -62,4 +62,10 @@ body {
 
 .zero {
   grid-column: span 2;
+}
+
+.operator[data-action="+/-"],
+.operator[data-action="%"],
+.number[data-action=","] {
+  font-size: 1rem; 
 }

@@ -1,4 +1,5 @@
 import "../styles/style.css";
+
 const screen = document.getElementById("screen");
 let currentValue = "";
 let previousValue = "";
@@ -16,7 +17,7 @@ function clearAll() {
 }
 
 function appendNumber(number) {
-  if (number === "." && currentValue.includes(".")) return;
+  if (number === "," && currentValue.includes(",")) return;
   currentValue += number;
   updateScreen(currentValue);
 }
@@ -33,8 +34,8 @@ function chooseOperator(op) {
 
 function compute() {
   let result;
-  const prev = parseFloat(previousValue);
-  const curr = parseFloat(currentValue);
+  const prev = parseFloat(previousValue.replace(",", "."));
+  const curr = parseFloat(currentValue.replace(",", "."));
   if (isNaN(prev) || isNaN(curr)) return;
 
   switch (operator) {
@@ -53,19 +54,45 @@ function compute() {
     default:
       return;
   }
-  currentValue = result.toString();
+
+  currentValue = result.toString().replace(".", ",");
   operator = "";
   previousValue = "";
+  updateScreen(currentValue);
+}
+
+function toggleSign() {
+  if (!currentValue) return;
+  if (currentValue.startsWith("-")) {
+    currentValue = currentValue.slice(1);
+  } else {
+    currentValue = "-" + currentValue;
+  }
+  updateScreen(currentValue);
+}
+
+function percent() {
+  if (!currentValue) return;
+  currentValue = (parseFloat(currentValue.replace(",", ".")) / 100)
+    .toString()
+    .replace(".", ",");
   updateScreen(currentValue);
 }
 
 document.querySelectorAll(".btn").forEach((button) => {
   button.addEventListener("click", () => {
     const action = button.dataset.action;
+
     if (button.classList.contains("number")) {
       appendNumber(action);
     } else if (button.classList.contains("operator")) {
-      chooseOperator(action);
+      if (action === "+/-") {
+        toggleSign();
+      } else if (action === "%") {
+        percent();
+      } else {
+        chooseOperator(action);
+      }
     } else if (button.classList.contains("clear")) {
       clearAll();
     } else if (button.classList.contains("equals")) {
