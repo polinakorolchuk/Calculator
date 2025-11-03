@@ -1,24 +1,35 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  mode: 'development', // или 'production' для финальной сборки
-  entry: './src/index.js', // главный JS файл
+  mode: "development",
+  entry: "./src/index.js",
   output: {
-    filename: 'bundle.js', // собранный JS
-    path: path.resolve(__dirname, 'dist'), // папка для сборки
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
     clean: true,
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
   devServer: {
-    static: './dist',
-    open: true, // откроет браузер автоматически
-    hot: true,  // включит HMR (горячую перезагрузку)
+    static: "./dist",
+    open: true,
+    hot: true,
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.html', // твой исходный HTML
+      template: "./src/index.html",
     }),
   ],
+  resolve: {
+    extensions: [".js"],
+  },
 };
