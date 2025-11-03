@@ -1,0 +1,43 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky install",
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production"
+  },
+  "lint-staged": {
+    "src/**/*.js": ["eslint --fix", "prettier --write"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polinakorolchuk/Calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/polinakorolchuk/Calculator/issues"
+  },
+  "homepage": "https://github.com/polinakorolchuk/Calculator#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.5.0",
+    "html-webpack-plugin": "^5.6.4",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.3.0",
+    "prettier": "^3.6.2",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}

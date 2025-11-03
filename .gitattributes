@@ -1,0 +1,17 @@
+# Set default behavior to automatically normalize line endings
+* text=auto
+
+# Treat JS and JSON files as text
+*.js text
+*.json text
+
+# Ignore binary files for diff
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+
+# Force LF for shell scripts
+*.sh text eol=lf
