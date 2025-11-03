@@ -6,7 +6,7 @@ let previousValue = "";
 let operator = "";
 
 function updateScreen(value) {
-  screen.textContent = value;
+  screen.value = value; // Исправлено: у input нужно менять value, а не textContent
 }
 
 function clearAll() {
@@ -79,24 +79,23 @@ function percent() {
   updateScreen(currentValue);
 }
 
-document.querySelectorAll(".btn").forEach((button) => {
-  button.addEventListener("click", () => {
-    const action = button.dataset.action;
+// Ждём, пока DOM загрузится
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".button").forEach((button) => {
+    button.addEventListener("click", () => {
+      const action = button.dataset.action;
 
-    if (button.classList.contains("number")) {
-      appendNumber(action);
-    } else if (button.classList.contains("operator")) {
-      if (action === "+/-") {
-        toggleSign();
-      } else if (action === "%") {
-        percent();
-      } else {
-        chooseOperator(action);
+      if (!isNaN(action) || action === ",") {
+        appendNumber(action);
+      } else if (["+", "-", "*", "/", "+/-", "%"].includes(action)) {
+        if (action === "+/-") toggleSign();
+        else if (action === "%") percent();
+        else chooseOperator(action);
+      } else if (action === "clear") {
+        clearAll();
+      } else if (action === "=") {
+        compute();
       }
-    } else if (button.classList.contains("clear")) {
-      clearAll();
-    } else if (button.classList.contains("equals")) {
-      compute();
-    }
+    });
   });
 });

@@ -1,41 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator</title>
-  <link rel="stylesheet" href="../styles/style.css">
-</head>
-<body>
-  <div class="calculator">
-    <div class="calculator-screen" id="screen">0</div>
-    <div class="calculator-buttons">
-      <button class="btn clear" data-action="clear">AC</button>
-      <button class="btn operator" data-action="+/-">+/-</button>
-      <button class="btn operator" data-action="%">%</button>
-      <button class="btn operator" data-action="/">/</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="theme">
+        <div class="round red"></div>
+        <div class="round yellow"></div>
+        <div class="round green"></div>
+      </div>
 
-      <button class="btn number" data-action="7">7</button>
-      <button class="btn number" data-action="8">8</button>
-      <button class="btn number" data-action="9">9</button>
-      <button class="btn operator" data-action="*">*</button>
+      <input type="text" class="display" id="screen" value="0" readonly />
 
-      <button class="btn number" data-action="4">4</button>
-      <button class="btn number" data-action="5">5</button>
-      <button class="btn number" data-action="6">6</button>
-      <button class="btn operator" data-action="-">-</button>
+      <div class="buttons">
+        <div class="button grey" data-action="clear">AC</div>
+        <div class="button grey" data-action="+/-">+/-</div>
+        <div class="button grey" data-action="%">%</div>
+        <div class="button orange" data-action="/">÷</div>
 
-      <button class="btn number" data-action="1">1</button>
-      <button class="btn number" data-action="2">2</button>
-      <button class="btn number" data-action="3">3</button>
-      <button class="btn operator" data-action="+">+</button>
+        <div class="button darkGrey" data-action="7">7</div>
+        <div class="button darkGrey" data-action="8">8</div>
+        <div class="button darkGrey" data-action="9">9</div>
+        <div class="button orange" data-action="*">×</div>
 
-      <button class="btn number zero" data-action="0">0</button>
-      <button class="btn number" data-action=",">,</button>
-      <button class="btn equals" data-action="=">=</button>
+        <div class="button darkGrey" data-action="4">4</div>
+        <div class="button darkGrey" data-action="5">5</div>
+        <div class="button darkGrey" data-action="6">6</div>
+        <div class="button orange" data-action="-">−</div>
+
+        <div class="button darkGrey" data-action="1">1</div>
+        <div class="button darkGrey" data-action="2">2</div>
+        <div class="button darkGrey" data-action="3">3</div>
+        <div class="button orange" data-action="+">+</div>
+
+        <div class="button darkGrey zero" data-action="0">0</div>
+        <div class="button darkGrey" data-action=",">,</div>
+        <div class="button orange" data-action="=">=</div>
+      </div>
     </div>
-  </div>
-
-  <script src="./index.js"></script>
-</body>
+  </body>
 </html>
