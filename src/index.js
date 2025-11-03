@@ -6,7 +6,7 @@ let previousValue = "";
 let operator = "";
 
 function updateScreen(value) {
-  screen.value = value; // Исправлено: у input нужно менять value, а не textContent
+  screen.value = value;
 }
 
 function clearAll() {
@@ -33,11 +33,11 @@ function chooseOperator(op) {
 }
 
 function compute() {
-  let result;
   const prev = parseFloat(previousValue.replace(",", "."));
   const curr = parseFloat(currentValue.replace(",", "."));
   if (isNaN(prev) || isNaN(curr)) return;
 
+  let result;
   switch (operator) {
     case "+":
       result = prev + curr;
@@ -79,7 +79,23 @@ function percent() {
   updateScreen(currentValue);
 }
 
-// Ждём, пока DOM загрузится
+const calculator = document.querySelector(".calculator");
+const themeButtons = document.querySelectorAll(".theme .round");
+
+themeButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const theme = btn.dataset.theme;
+
+    calculator.classList.remove("dark", "light", "greenTheme");
+    calculator.classList.add(theme);
+
+    themeButtons.forEach((b) => b.classList.remove("selected"));
+    btn.classList.add("selected");
+  });
+});
+
+document.querySelector(".round.dark").click();
+
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".button").forEach((button) => {
     button.addEventListener("click", () => {
